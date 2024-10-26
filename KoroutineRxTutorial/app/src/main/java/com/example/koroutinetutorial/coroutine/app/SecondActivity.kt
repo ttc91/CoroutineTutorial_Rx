@@ -1,8 +1,9 @@
-package com.example.koroutinetutorial
+package com.example.koroutinetutorial.coroutine.app
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.koroutinetutorial.R
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -10,13 +10,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KoroutineTutorial"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".coroutine.app.FourthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".coroutine.app.FirstActivity"
+            android:exported="false" />
+        <activity
+            android:name=".coroutine.app.SecondActivity"
+            android:exported="true" />
+        <activity
+            android:name=".coroutine.app.ThirdActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.KoroutineTutorial">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

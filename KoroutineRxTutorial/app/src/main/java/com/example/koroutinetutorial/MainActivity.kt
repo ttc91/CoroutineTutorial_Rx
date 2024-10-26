@@ -1,15 +1,12 @@
-package com.example.koroutinetutorial.coroutine.app
+package com.example.koroutinetutorial
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.activity.ComponentActivity
-import androidx.lifecycle.lifecycleScope
-import com.example.koroutinetutorial.R
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.example.koroutinetutorial.coroutine.app.FirstActivity
+import com.example.koroutinetutorial.coroutine.app.SecondActivity
 
 class MainActivity : ComponentActivity() {
 
@@ -25,29 +22,17 @@ class MainActivity : ComponentActivity() {
         _btnStartActivity = findViewById(R.id.btn_start_activity)
 
         _btnStartActivity.setOnClickListener{
-            //Below thread of "lifecycleScope" will not removed when destroying this activity.
-            lifecycleScope.launch {
-                while (true) {
-                    delay(1000L)
-                    Log.d(TAG, "[MainActivity - lifecycleScope] Still running...")
-                    Log.d(TAG, "[MainActivity - lifecycleScope] Hello from [thread]: ${Thread.currentThread().name}")
-                }
+            Log.d(TAG, "_btnStartActivity.setOnClickListener[IN]")
+            Intent(this@MainActivity, FirstActivity::class.java).also {
+                startActivity(it)
+                finish()
             }
-            //Below thread of "GlobalScope" will not be removed when destroying this activity.
-            GlobalScope.launch {
-                Log.d(TAG, "[MainActivity - GlobalScope] Hello from [thread]: ${Thread.currentThread().name}")
-                delay(5000L)
-                Intent(this@MainActivity, SecondActivity::class.java).also {
-                    startActivity(it)
-                    finish()
-                }
-            }
-
-            Log.d(TAG, "onCreate [OUT]")
+            Log.d(TAG, "_btnStartActivity.setOnClickListener[OUT]")
         }
 
-        Log.d(TAG, "[MainActivity - x]Hello from [thread]: ${Thread.currentThread().name}")
+        Log.d(TAG, "[MainActivity - x] Hello from [thread]: ${Thread.currentThread().name}")
 
+        Log.d(TAG, "onCreate [OUT]")
     }
 
 }

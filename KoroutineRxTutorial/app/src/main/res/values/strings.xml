@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">KoroutineTutorial</string>
+    <string name="app_name">KoroutineRxTutorial</string>
+
+    <string name="second_activity">SecondActivity</string>
+    <string name="third_activity">ThirdActivity</string>
+    <string name="fourth_activity">FourthActivity</string>
+    <string name="main_activity">StartCoroutine</string>
+    
+    <string name="first_activity_dispatcher">Dispatchers</string>
+
+    <string name="first_activity_running_block">Running Block</string>
+
 </resources>
