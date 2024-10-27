@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.koroutinetutorial.R
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -19,8 +20,12 @@ class FirstActivity : AppCompatActivity() {
     private lateinit var _btnSecondActivity: Button
     private lateinit var _btnThirdActivity: Button
     private lateinit var _btnFourthActivity: Button
+    private lateinit var _btnFifthActivity: Button
+    private lateinit var _btnSixthActivity: Button
+    private lateinit var _btnSeventhActivity: Button
 
 
+    @OptIn(DelicateCoroutinesApi::class)
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate [IN]")
@@ -30,6 +35,9 @@ class FirstActivity : AppCompatActivity() {
         _btnSecondActivity = findViewById(R.id.btn_second_activity)
         _btnThirdActivity = findViewById(R.id.btn_third_activity)
         _btnFourthActivity = findViewById(R.id.btn_fourth_activity)
+        _btnFifthActivity = findViewById(R.id.btn_fifth_activity)
+        _btnSixthActivity = findViewById(R.id.btn_sixth_activity)
+        _btnSeventhActivity = findViewById(R.id.btn_seventh_activity)
 
         _btnSecondActivity.setOnClickListener{
             Log.d(TAG, "_btnSecondActivity.setOnClickListener [IN]")
@@ -81,6 +89,51 @@ class FirstActivity : AppCompatActivity() {
             }
 
             Log.d(TAG, "_btnFourthActivity.setOnClickListener [OUT]")
+        }
+
+        _btnFifthActivity.setOnClickListener {
+            Log.d(TAG, "_btnFifthActivity.setOnClickListener [IN]")
+
+            lifecycleScope.launch {
+                Log.d(TAG, "[FirstActivity - GlobalScope] Hello from [thread]: ${Thread.currentThread().name}")
+                delay(5000L)
+                Intent(this@FirstActivity, FifthActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            }
+
+            Log.d(TAG, "_btnFifthActivity.setOnClickListener [OUT]")
+        }
+
+        _btnSixthActivity.setOnClickListener {
+            Log.d(TAG, "_btnSixthActivity.setOnClickListener [IN]")
+
+            lifecycleScope.launch {
+                Log.d(TAG, "[FirstActivity - GlobalScope] Hello from [thread]: ${Thread.currentThread().name}")
+                delay(5000L)
+                Intent(this@FirstActivity, SixthActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            }
+
+            Log.d(TAG, "_btnSixthActivity.setOnClickListener [OUT]")
+        }
+
+        _btnSeventhActivity.setOnClickListener {
+            Log.d(TAG, "_btnSeventhActivity.setOnClickListener [IN]")
+
+            lifecycleScope.launch {
+                Log.d(TAG, "[FirstActivity - GlobalScope] Hello from [thread]: ${Thread.currentThread().name}")
+                delay(5000L)
+                Intent(this@FirstActivity, SeventhActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            }
+
+            Log.d(TAG, "_btnSeventhActivity.setOnClickListener [OUT]")
         }
 
         Log.d(TAG, "[MainActivity - x] Hello from [thread]: ${Thread.currentThread().name}")

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.koroutinetutorial.R
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -12,6 +13,7 @@ class SecondActivity : AppCompatActivity() {
 
     private val TAG = SecondActivity::class.java.name
 
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate [IN]")
         super.onCreate(savedInstanceState)
