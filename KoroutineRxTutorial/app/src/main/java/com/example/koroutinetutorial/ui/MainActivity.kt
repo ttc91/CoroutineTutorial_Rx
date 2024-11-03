@@ -1,12 +1,12 @@
-package com.example.koroutinetutorial
+package com.example.koroutinetutorial.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.activity.ComponentActivity
+import com.example.koroutinetutorial.R
 import com.example.koroutinetutorial.coroutine.app.FirstActivity
-import com.example.koroutinetutorial.coroutine.app.SecondActivity
 
 class MainActivity : ComponentActivity() {
 

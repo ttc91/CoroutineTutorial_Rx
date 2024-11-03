@@ -9,6 +9,9 @@
     <string name="seventh_activity">SeventhActivity</string>
     <string name="main_activity">StartCoroutine</string>
 
+    <string name="str_get_data">Get Data</string>
+    <string name="str_remove_data">Remove Data</string>
+
     <string name="first_activity_dispatcher">Dispatchers</string>
 
     <string name="first_activity_running_block">Running Block</string>

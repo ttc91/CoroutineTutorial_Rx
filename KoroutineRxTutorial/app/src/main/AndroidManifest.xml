@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".api.retrofit.ui.RetrofitActivity"
+            android:exported="false" />
+        <activity
             android:name=".coroutine.app.SeventhActivity"
             android:exported="false" />
         <activity
@@ -38,7 +41,7 @@
             android:name=".coroutine.app.ThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

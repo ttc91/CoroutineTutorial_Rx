@@ -9,5 +9,4 @@ interface IService {
     suspend fun getComments(): List<Comment>
 
 
-
 }
